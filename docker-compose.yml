@@ -1,0 +1,15 @@
+version: '3'
+services:
+  wdb:
+    image: mysql:8.0
+    ports: 
+      - "13306:3306"
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/my.cnf
+    environment:
+      - MYSQL_DATABASE=worldcaricature
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+      - MYSQL_ROOT_PASSWORD=test
+      - TZ= Asia/Tokyo
